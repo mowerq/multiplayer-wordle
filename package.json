@@ -55,8 +55,11 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.1",
+    "i18next": "latest",
     "@supabase/supabase-js": "latest",
-    "uuid": "latest"
+    "react-i18next": "latest",
+    "uuid": "latest",
+    "i18next-browser-languagedetector": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

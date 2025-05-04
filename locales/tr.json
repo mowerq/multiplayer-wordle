@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Çok Oyunculu Wordle",
+    "subtitle": "Yalnız veya arkadaşlarınla gerçek zamanlı oyna"
+  },
+  "profile": {
+    "title": "Profilin",
+    "description": "Çok oyunculu oyunlar için takma adını ayarla",
+    "nickname": "Takma Ad",
+    "language": "Dil",
+    "updateProfile": "Profili Güncelle",
+    "updating": "Güncelleniyor...",
+    "updated": "Takma ad başarıyla güncellendi!"
+  },
+  "play": {
+    "title": "Wordle Oyna",
+    "description": "Nasıl oynamak istediğini seç",
+    "solo": "Tek Başına Oyna",
+    "creating": "Oluşturuluyor...",
+    "multiplayer": "Çok Oyunculu Oyun Oluştur"
+  },
+  "join": {
+    "title": "Oyuna Katıl",
+    "description": "Mevcut bir oyuna katılmak için oyun kodunu gir",
+    "gameCode": "Oyun Kodu",
+    "joining": "Katılınıyor...",
+    "joinGame": "Oyuna Katıl"
+  },
+  "game": {
+    "gameId": "Oyun ID",
+    "share": "Paylaş",
+    "linkCopied": "Bağlantı kopyalandı!",
+    "linkCopiedDesc": "Arkadaşlarını davet etmek için bu bağlantıyı paylaş",
+    "invalidWord": "Geçersiz Kelime",
+    "invalidWordDesc": "Bu kelime sözlüğümüzde yok. Lütfen başka bir kelime deneyin.",
+    "players": "Oyuncular",
+    "you": "Sen",
+    "recentGuesses": "Son Tahminler",
+    "noGuesses": "Henüz tahmin yok.",
+    "connectionError": "Bağlantı Hatası",
+    "retry": "Tekrar Dene",
+    "backToHome": "Ana Sayfaya Dön",
+    "playAgain": "Tekrar Oyna",
+    "youWon": "Kazandın!",
+    "gameOver": "Oyun Bitti",
+    "theWordWas": "Kelime şuydu"
+  },
+  "errors": {
+    "connectionLost": "Bağlantı kesildi. Lütfen sayfayı yenileyin.",
+    "connectionError": "Bağlantı hatası. Lütfen sayfayı yenileyin.",
+    "connectionTimeout": "Bağlantı zaman aşımına uğradı. Lütfen sayfayı yenileyin.",
+    "connectionClosed": "Bağlantı beklenmedik şekilde kapandı. Lütfen sayfayı yenileyin.",
+    "connectionFailed": "Bağlantı başarısız oldu. Lütfen sayfayı yenileyin.",
+    "setupFailed": "Bağlantı kurulumu başarısız oldu. Lütfen sayfayı yenileyin.",
+    "initFailed": "Oyun başlatılamadı. Lütfen sayfayı yenileyin."
+  },
+  "toast": {
+    "error": "Hata",
+    "success": "Başarılı",
+    "nicknameUpdated": "Takma adın güncellendi",
+    "enterValidNickname": "Lütfen geçerli bir takma ad girin",
+    "updateFailed": "Takma ad güncellenemedi. Lütfen tekrar deneyin.",
+    "submitFailed": "Tahmin gönderilemedi"
+  }
+}

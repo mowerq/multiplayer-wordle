@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Multiplayer Wordle",
+    "subtitle": "Play alone or with friends in real-time"
+  },
+  "profile": {
+    "title": "Your Profile",
+    "description": "Set your nickname for multiplayer games",
+    "nickname": "Nickname",
+    "language": "Language",
+    "updateProfile": "Update Profile",
+    "updating": "Updating...",
+    "updated": "Nickname updated successfully!"
+  },
+  "play": {
+    "title": "Play Wordle",
+    "description": "Choose how you want to play",
+    "solo": "Play Solo",
+    "creating": "Creating...",
+    "multiplayer": "Create Multiplayer Game"
+  },
+  "join": {
+    "title": "Join a Game",
+    "description": "Enter a game code to join an existing game",
+    "gameCode": "Game Code",
+    "joining": "Joining...",
+    "joinGame": "Join Game"
+  },
+  "game": {
+    "gameId": "Game ID",
+    "share": "Share",
+    "linkCopied": "Link copied!",
+    "linkCopiedDesc": "Share this link with your friends to invite them to the game",
+    "invalidWord": "Invalid Word",
+    "invalidWordDesc": "This word is not in our dictionary. Please try another word.",
+    "players": "Players",
+    "you": "You",
+    "recentGuesses": "Recent Guesses",
+    "noGuesses": "No guesses yet",
+    "connectionError": "Connection Error",
+    "retry": "Retry",
+    "backToHome": "Back to Home",
+    "playAgain": "Play Again",
+    "youWon": "You won!",
+    "gameOver": "Game Over",
+    "theWordWas": "The word was"
+  },
+  "errors": {
+    "connectionLost": "Connection lost. Please refresh the page.",
+    "connectionError": "Connection error. Please refresh the page.",
+    "connectionTimeout": "Connection timed out. Please refresh the page.",
+    "connectionClosed": "Connection closed unexpectedly. Please refresh the page.",
+    "connectionFailed": "Connection failed. Please refresh the page.",
+    "setupFailed": "Failed to set up connection. Please refresh the page.",
+    "initFailed": "Failed to initialize game. Please refresh the page."
+  },
+  "toast": {
+    "error": "Error",
+    "success": "Success",
+    "nicknameUpdated": "Your nickname has been updated",
+    "enterValidNickname": "Please enter a valid nickname",
+    "updateFailed": "Failed to update nickname. Please try again.",
+    "submitFailed": "Failed to submit guess"
+  }
+}

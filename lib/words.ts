@@ -1,58 +1,8 @@
-// A list of 5-letter words for the Wordle game
-/*export const WORDS = [
-  "APPLE",
-  "BEACH",
-  "CHAIR",
-  "DANCE",
-  "EAGLE",
-  "FLAME",
-  "GHOST",
-  "HEART",
-  "IMAGE",
-  "JUICE",
-  "KNIFE",
-  "LEMON",
-  "MUSIC",
-  "NIGHT",
-  "OCEAN",
-  "PIANO",
-  "QUEEN",
-  "RIVER",
-  "SNAKE",
-  "TIGER",
-  "UNCLE",
-  "VOICE",
-  "WATER",
-  "XENON",
-  "YACHT",
-  "ZEBRA",
-  "ACTOR",
-  "BREAD",
-  "CLOUD",
-  "DREAM",
-  "EARTH",
-  "FRUIT",
-  "GRAPE",
-  "HOUSE",
-  "IVORY",
-  "JELLY",
-  "KOALA",
-  "LIGHT",
-  "MONEY",
-  "NOBLE",
-  "OLIVE",
-  "PAPER",
-  "QUILT",
-  "RADIO",
-  "STORM",
-  "TRAIN",
-  "URBAN",
-  "VIRUS",
-  "WHALE",
-  "XYLYL",
-]*/
+import { EN_VALID_WORDS } from "./en_valid_words";
+import { TR_VALID_WORDS } from "./tr_valid_words";
 
-export const WORDS = [
+// Turkish word list
+export const TR_WORDS = [
   "AHLAK",
   "GURUR",
   "KİBİR",
@@ -71,13 +21,9 @@ export const WORDS = [
   "YÜZEY",
   "ÇIKIŞ",
   "GİRİŞ",
-  "DEFİN",
   "KABİR",
-  "GÖMÜT",
   "MEZAR",
   "BAHÇE",
-  "HOTEL",
-  "ANTRE",
   "SALON",
   "KİLER",
   "BANYO",
@@ -120,7 +66,6 @@ export const WORDS = [
   "HIRKA",
   "CEKET",
   "KEMER",
-  "FULAR",
   "KABAN",
   "PALTO",
   "YILAN",
@@ -147,7 +92,6 @@ export const WORDS = [
   "REZİL",
   "EBEDİ",
   "EZELİ",
-  "VAZIH",
   "FAKİR",
   "ASABİ",
   "FERAH",
@@ -167,7 +111,6 @@ export const WORDS = [
   "GAMLI",
   "LATİF",
   "İÇSEL",
-  "ZEBUN",
   "CİMRİ",
   "BİBER",
   "HELVA",
@@ -188,44 +131,54 @@ export const WORDS = [
   "SUSAM",
   "TAHİN",
   "REÇEL",
-  "AYRAN"
+  "AYRAN",
 ];
 
-// Get a random word from the list
-export const getRandomWord = (): string => {
-  return WORDS[Math.floor(Math.random() * WORDS.length)]
-}
+// Get a random word from the list based on language
+export const getRandomWord = (language: "en" | "tr" = "en"): string => {
+  const wordList = language === "en" ? EN_VALID_WORDS : TR_WORDS;
+  return wordList[Math.floor(Math.random() * wordList.length)];
+};
 
-// Check if a word is valid (5 letters)
-export const isValidWord = (word: string): boolean => {
-  return word.length === 5
-}
+// Check if a word is valid (5 letters and in the word list)
+export const isValidWord = (
+  word: string,
+  language: "en" | "tr" = "en"
+): boolean => {
+  if (word.length !== 5) return false;
+
+  const validWords = language === "en" ? EN_VALID_WORDS : TR_VALID_WORDS;
+  return validWords.includes(word.toUpperCase());
+};
 
 // Evaluate a guess against the target word
-export type LetterState = "correct" | "present" | "absent"
+export type LetterState = "correct" | "present" | "absent";
 
-export const evaluateGuess = (guess: string, targetWord: string): LetterState[] => {
-  const result: LetterState[] = Array(5).fill("absent")
-  const targetLetters = targetWord.split("")
+export const evaluateGuess = (
+  guess: string,
+  targetWord: string
+): LetterState[] => {
+  const result: LetterState[] = Array(5).fill("absent");
+  const targetLetters = targetWord.split("");
 
   // First pass: mark correct letters
   for (let i = 0; i < 5; i++) {
     if (guess[i] === targetWord[i]) {
-      result[i] = "correct"
-      targetLetters[i] = "" // Mark as used
+      result[i] = "correct";
+      targetLetters[i] = ""; // Mark as used
     }
   }
 
   // Second pass: mark present letters
   for (let i = 0; i < 5; i++) {
     if (result[i] === "absent") {
-      const index = targetLetters.indexOf(guess[i])
+      const index = targetLetters.indexOf(guess[i]);
       if (index !== -1) {
-        result[i] = "present"
-        targetLetters[index] = "" // Mark as used
+        result[i] = "present";
+        targetLetters[index] = ""; // Mark as used
       }
     }
   }
 
-  return result
-}
+  return result;
+};

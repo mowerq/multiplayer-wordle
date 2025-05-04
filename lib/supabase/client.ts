@@ -11,7 +11,21 @@ export const getSupabaseClient = () => {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-    supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey)
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error("Supabase URL or Anon Key is missing")
+      throw new Error("Supabase configuration is incomplete")
+    }
+
+    supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey, {
+      realtime: {
+        params: {
+          eventsPerSecond: 10,
+        },
+      },
+      auth: {
+        persistSession: false,
+      },
+    })
   }
   return supabaseClient
 }
