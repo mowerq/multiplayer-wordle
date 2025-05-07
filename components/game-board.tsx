@@ -64,6 +64,7 @@ export default function GameBoard({
   const keyboardStatesRef = useRef<Record<string, LetterState>>({});
   const supabaseRef = useRef(getSupabaseClient());
   const channelNameRef = useRef(`game-${game.id}-${Date.now()}`); // Unique channel name
+  const winnerIdRef = useRef<string | null>(null);
 
   // UI state that needs to trigger re-renders
   const [isLoading, setIsLoading] = useState(true);
@@ -317,6 +318,7 @@ export default function GameBoard({
           (payload) => {
             if (!mountedRef.current) return;
             gameStatusRef.current = payload.new.status;
+            winnerIdRef.current = payload.new.winner_id;
             triggerRender();
           }
         )
@@ -678,7 +680,17 @@ export default function GameBoard({
                   <h3 className="text-xl font-bold text-white mb-2">
                     {userGuesses.some((g) => g.guess === game.word)
                       ? t("game.youWon")
-                      : t("game.gameOver")}
+                      : `${t("game.gameOver")}!${
+                          game.is_multiplayer &&
+                          winnerIdRef.current &&
+                          winnerIdRef.current !== player?.id
+                            ? ` ${t("game.winner")}: ${
+                                gamePlayers.find(
+                                  (p) => p.player_id === winnerIdRef.current
+                                )?.player.nickname
+                              }`
+                            : ""
+                        }`}
                   </h3>
 
                   <p className="text-slate-300">

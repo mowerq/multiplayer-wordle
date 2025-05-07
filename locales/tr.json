@@ -43,7 +43,8 @@
     "playAgain": "Tekrar Oyna",
     "youWon": "Kazandın!",
     "gameOver": "Oyun Bitti",
-    "theWordWas": "Kelime şuydu"
+    "theWordWas": "Kelime şuydu",
+    "winner": "Kazanan"
   },
   "errors": {
     "connectionLost": "Bağlantı kesildi. Lütfen sayfayı yenileyin.",

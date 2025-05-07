@@ -43,7 +43,8 @@
     "playAgain": "Play Again",
     "youWon": "You won!",
     "gameOver": "Game Over",
-    "theWordWas": "The word was"
+    "theWordWas": "The word was",
+    "winner": "Winner"
   },
   "errors": {
     "connectionLost": "Connection lost. Please refresh the page.",

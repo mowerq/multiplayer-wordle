@@ -28,7 +28,7 @@ export default function HomePage() {
   const [error, setError] = useState<string | null>(null)
   const [playerId, setPlayerId] = useState<string | null>(null)
   const [playerInitialized, setPlayerInitialized] = useState(false)
-  const [language, setLanguage] = useState<"en" | "tr">("en")
+  const [language, setLanguage] = useState<"en" | "tr">("tr")
   const [updateSuccess, setUpdateSuccess] = useState(false)
 
   useEffect(() => {
